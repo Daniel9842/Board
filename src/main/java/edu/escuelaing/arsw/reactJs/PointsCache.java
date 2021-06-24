@@ -1,9 +1,10 @@
 package edu.escuelaing.arsw.reactJs;
 
+import java.util.ArrayList;
+
 public class PointsCache {
 	
-	public String positions = "";
-	
+	public ArrayList<String> positions = new ArrayList<String>();
 	private static PointsCache _instance = new PointsCache();
 	private PointsCache() {}
 	public static PointsCache getInstance() {
@@ -11,11 +12,11 @@ public class PointsCache {
 	}
 	
 	
-	public void setPositions(String pos) {
-		positions = pos;
+	public void addPositions(String newPositions) {
+		positions.add(newPositions);
 	}
 	
-	public String getPositions() {
+	public ArrayList<String> getPositions() {
 		return positions;
 	}
 }

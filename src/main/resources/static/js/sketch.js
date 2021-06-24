@@ -2,6 +2,7 @@ let points = {pointsarr:[]};
 let posX=0;
 let posY=0;
 let timerId = setInterval(() => checkPoints(),5000);
+let timerPoint = setInterval(() => getPoints(),6000);
 let cachePoints = {cachePointsarr:[]};
  
 
@@ -19,11 +20,18 @@ function checkPoints(){
              body: JSON.stringify(msg)
          })
          .then(res=> res.json())
-         .then(result=>console.log(result));
  }
  
 function getPoints(){
-	fetch()
+	fetch("/newPoints,{
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+             },
+             body: JSON.stringify(msg)
+         })
+         .then(res=> res.json())
+         .then(result=>console.log(result));
 }
         
 	//Este código asume que las librerías de P5.js ya están cargadas.

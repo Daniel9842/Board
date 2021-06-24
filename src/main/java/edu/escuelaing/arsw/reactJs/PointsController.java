@@ -1,9 +1,10 @@
 package edu.escuelaing.arsw.reactJs;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.ArrayList;
+
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,8 +14,13 @@ public class PointsController {
 	
 	@PostMapping("/points")
 	public String processPoints(@RequestBody String points){
-		System.out.println(points);
-		cache.setPositions(points);
+		int lentgh = points.length();
+		System.out.println(points.substring(13,lentgh-1));
 		return points;
+	}
+	
+	@PostMapping("/newPoints")
+	public ArrayList<String> getPositions(){
+		return cache.getPositions();
 	}
 }

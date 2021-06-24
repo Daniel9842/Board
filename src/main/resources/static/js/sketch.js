@@ -1,6 +1,8 @@
 let points = {pointsarr:[]};
+let posX=0;
+let posY=0;
 let timerId = setInterval(() => checkPoints(),5000);
-
+let cachePoints = {cachePointsarr:[]};
  
 
 
@@ -19,6 +21,10 @@ function checkPoints(){
          .then(res=> res.json())
          .then(result=>console.log(result));
  }
+ 
+function getPoints(){
+	fetch()
+}
         
 	//Este código asume que las librerías de P5.js ya están cargadas.
 	//Esta función se ejecuta una sola vez al inicio del script.
@@ -36,4 +42,9 @@ function checkPoints(){
     	fill(255,255,255);
   	}
   
-}
+	}
+	
+	function newDraw() {
+  		fill(0,0,0);
+    	ellipse(posX, posY, 20, 20);
+	}
